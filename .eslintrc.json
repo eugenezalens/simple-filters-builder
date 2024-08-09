@@ -1,0 +1,21 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": ["import"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin", // node "builtin" modules
+          "external", // "external" modules
+          "internal", // "internal" modules
+          ["parent", "sibling", "index"], // "parent", "sibling" and "index" are treated as a single group
+          "object", // "object" imports
+          "type" // "type" imports
+        ],
+        "newlines-between": "always", // always require a newline between import groups
+        "alphabetize": { "order": "asc", "caseInsensitive": true } // sort imports alphabetically
+      }
+    ]
+  }
+}
